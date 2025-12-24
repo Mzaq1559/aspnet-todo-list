@@ -1,0 +1,56 @@
+@model IEnumerable<global::Todo.Models.TodoItem>
+
+@{
+    ViewData["Title"] = "My Todo List";
+}
+
+<h1>My Todo List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Todo</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p>No todos yet. Add one above!</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @if (item.IsCompleted)
+                        {
+                            <del>@item.Title</del>
+                        }
+                        else
+                        {
+                            @item.Title
+                        }
+                    </td>
+                    <td>
+                        <span class="badge @(item.IsCompleted ? "bg-success" : "bg-warning")">
+                            @(item.IsCompleted ? "Completed" : "Pending")
+                        </span>
+                    </td>
+                    <td>@item.CreatedAt.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

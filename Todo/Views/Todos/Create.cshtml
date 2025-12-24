@@ -1,0 +1,23 @@
+@model global::Todo.Models.TodoItem
+
+@{
+    ViewData["Title"] = "Create Todo";
+}
+
+<h1>Create New Todo</h1>
+
+<form asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input asp-for="IsCompleted" class="form-check-input" />
+        <label asp-for="IsCompleted" class="form-check-label">Completed?</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>

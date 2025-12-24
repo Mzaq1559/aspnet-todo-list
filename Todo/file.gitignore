@@ -1,0 +1,22 @@
+# Visual Studio / .NET
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rchive/
+
+# Appsettings personal
+appsettings.Development.json
+
+# Node modules (if any)
+node_modules/
+
+# Publish folder
+/wwwroot/build/
