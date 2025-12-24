@@ -15,7 +15,9 @@ This project demonstrates core MVC concepts including controllers, models, views
 
 ## Screenshots
 
-![Todo List](screenshots/list.png)
+![Todo List](screenshots/1.png)
+![Todo List](screenshots/2.png)
+![Todo List](screenshots/3.png)
 *(Add your own screenshots later by creating a `screenshots` folder and placing images there)*
 
 ## How to Run
